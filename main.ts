@@ -26,9 +26,9 @@ basic.forever(function () {
         pins.analogWritePin(AnalogPin.P16, 0)
     }
     if (rainfall > 1000) {
-        microIoT.microIoT_ServoRun(microIoT.aServos.S2, 58)
+        pins.servoWritePin(AnalogPin.P15, 45)
     } else {
-        microIoT.microIoT_ServoRun(microIoT.aServos.S2, 0)
+        pins.servoWritePin(AnalogPin.P15, 0)
     }
     if (distance < 5) {
         pins.digitalWritePin(DigitalPin.P6, 1)
