@@ -5,7 +5,7 @@ basic.showNumber(1)
 OLED.writeStringNewLine("Ready!")
 basic.showIcon(IconNames.Yes)
 basic.forever(function () {
-    light_level = pins.analogReadPin(AnalogPin.P1)
+    light_level = pins.analogReadPin(AnalogReadWritePin.P1)
     OLED.writeStringNewLine("Light:   " + light_level)
     if (light_level > 300) {
         pins.analogWritePin(AnalogPin.P2, 1023)
@@ -13,4 +13,5 @@ basic.forever(function () {
         pins.analogWritePin(AnalogPin.P2, 0)
     }
     basic.pause(1000)
+    OLED.clear()
 })
